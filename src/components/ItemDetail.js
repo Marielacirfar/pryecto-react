@@ -1,5 +1,5 @@
 import ItemCount from "./ItemCount";
-const ItemDetail = ({id, name, img, category, description, price, stock})=> {
+const ItemDetail = ({id, name, img, category, descripcion, price, stock})=> {
     return(
         <article className="flex flex-col items-center justify-center border rounded p-4 m-20">
             <header>
@@ -15,14 +15,14 @@ const ItemDetail = ({id, name, img, category, description, price, stock})=> {
                     Categoria: {category}
                 </p>
                 <p>
-                    Descripcion: {description}
+                    Descripcion: {descripcion}
                 </p>
                 <p>
                     Precio: {price}
                 </p>
             </section>
             <footer>
-                <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log("Cantidad agregada", quantity )}/>
+                <ItemCount initial={0} stock={stock} onAdd={(quantity) => console.log("Cantidad agregada", quantity )}/>
             </footer>
         </article>
     )

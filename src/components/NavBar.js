@@ -1,20 +1,23 @@
 import CartWidget from "./CartWidget"
-function NavBar(){
+import { NavLink, Link } from "react-router-dom";
+const NavBar =()=> {
+
     return(
-  
-        
         <nav className="bg-yellow-50">
-        <h1 className="text-blue-600 flex justify-center">TIENDA MARIELA</h1>
+        <Link to= "/">
+            <h1 className="bg-amber-200 italic hover:not-italic font-extrabold tracking-widest hover:font-serif text-purple-600  p-3   shadow-xl shadow-rose-400 text-center">TIENDA MARIELA</h1>
+        </Link>
         <div className="flex justify-evenly">
-            <a className="px-2.5" href="#">Computadoras</a>
-            <a className="px-2.5" href="#">Lavarropas</a>
-            <a className="px-2.5" href="#">Celulares</a>
+            <NavLink to={`/category/Computadoras`}>Computadoras</NavLink>
+            <NavLink to={`/category/Lavarropas`}>Lavarropas</NavLink>
+            <NavLink to={`/category/Celulares`}>Celulares</NavLink>
+            
         </div>
             <CartWidget/>
         </nav>
-        
-      
     )
-};
+}
 
+      
+   
 export default NavBar
